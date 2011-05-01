@@ -19,5 +19,5 @@
 @property (nonatomic, retain) IBOutlet UILabel *apellido;
 
 -(IBAction)mostrarPicker;
-
+-(NSString *)telefonoLimpio:(NSString *)telefono;
 @end
