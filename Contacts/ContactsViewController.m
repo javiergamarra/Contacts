@@ -48,11 +48,15 @@
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
     if (property == kABPersonPhoneProperty){
-        NSLog(@"Principal");
+        ABMultiValueRef phones =(NSString*)ABRecordCopyValue(person, kABPersonPhoneProperty);
+        NSString* mobile = (NSString*)ABMultiValueCopyValueAtIndex(phones, identifier);
+        NSLog(@"Teléfono elegido: %@", mobile);
+        return YES;        
     }
     NSLog(@"Ye");
     return NO;   
 }
+
 -(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
     [self dismissModalViewControllerAnimated:YES];
 }
