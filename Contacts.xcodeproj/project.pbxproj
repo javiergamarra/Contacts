@@ -16,6 +16,8 @@
 		B95553C1136DCF510038DF00 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95553BF136DCF510038DF00 /* MainWindow.xib */; };
 		B95553C4136DCF510038DF00 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95553C3136DCF510038DF00 /* ContactsViewController.m */; };
 		B95553C7136DCF510038DF00 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95553C5136DCF510038DF00 /* ContactsViewController.xib */; };
+		B95553CF136DD6050038DF00 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95553CD136DD6050038DF00 /* AddressBook.framework */; };
+		B95553D0136DD6050038DF00 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95553CE136DD6050038DF00 /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		B95553C2136DCF510038DF00 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		B95553C3136DCF510038DF00 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		B95553C6136DCF510038DF00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ContactsViewController.xib; sourceTree = "<group>"; };
+		B95553CD136DD6050038DF00 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B95553CE136DD6050038DF00 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95553CF136DD6050038DF00 /* AddressBook.framework in Frameworks */,
+				B95553D0136DD6050038DF00 /* AddressBookUI.framework in Frameworks */,
 				B95553AE136DCF500038DF00 /* UIKit.framework in Frameworks */,
 				B95553B0136DCF510038DF00 /* Foundation.framework in Frameworks */,
 				B95553B2136DCF510038DF00 /* CoreGraphics.framework in Frameworks */,
@@ -52,6 +58,8 @@
 		B955539E136DCF500038DF00 = {
 			isa = PBXGroup;
 			children = (
+				B95553CD136DD6050038DF00 /* AddressBook.framework */,
+				B95553CE136DD6050038DF00 /* AddressBookUI.framework */,
 				B95553B3136DCF510038DF00 /* Contacts */,
 				B95553AC136DCF500038DF00 /* Frameworks */,
 				B95553AA136DCF500038DF00 /* Products */,
@@ -241,6 +249,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Contacts/Contacts-Prefix.pch";
 				INFOPLIST_FILE = "Contacts/Contacts-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -254,6 +263,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Contacts/Contacts-Prefix.pch";
 				INFOPLIST_FILE = "Contacts/Contacts-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
