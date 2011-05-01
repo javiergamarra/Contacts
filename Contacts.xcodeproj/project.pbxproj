@@ -58,8 +58,6 @@
 		B955539E136DCF500038DF00 = {
 			isa = PBXGroup;
 			children = (
-				B95553CD136DD6050038DF00 /* AddressBook.framework */,
-				B95553CE136DD6050038DF00 /* AddressBookUI.framework */,
 				B95553B3136DCF510038DF00 /* Contacts */,
 				B95553AC136DCF500038DF00 /* Frameworks */,
 				B95553AA136DCF500038DF00 /* Products */,
@@ -77,6 +75,8 @@
 		B95553AC136DCF500038DF00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B95553CD136DD6050038DF00 /* AddressBook.framework */,
+				B95553CE136DD6050038DF00 /* AddressBookUI.framework */,
 				B95553AD136DCF500038DF00 /* UIKit.framework */,
 				B95553AF136DCF510038DF00 /* Foundation.framework */,
 				B95553B1136DCF510038DF00 /* CoreGraphics.framework */,

@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface ContactsViewController : UIViewController {
-    
+@interface ContactsViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate>{
+    UILabel *nombre;
+    UILabel *apellido;
 }
+
+@property (nonatomic, retain) IBOutlet UILabel *nombre;
+@property (nonatomic, retain) IBOutlet UILabel *apellido;
+
+-(IBAction)mostrarPicker;
 
 @end

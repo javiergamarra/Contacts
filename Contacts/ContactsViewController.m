@@ -9,14 +9,64 @@
 #import "ContactsViewController.h"
 
 @implementation ContactsViewController
+@synthesize nombre, apellido;
 
-- (void)dealloc
-{
+- (void)dealloc{
+    [nombre release];
+    [apellido release];
+    
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void)mostrarPicker{
+    NSLog(@"Muestra el picker");
+
+    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
+}
+
+
+
+#pragma mark - ABPeoplePickerNavigationControllerDelegate
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
+    NSString *name = (NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    self.nombre.text = name;
+    
+    NSString *apell = (NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    self.apellido.text = apell;
+    
+    [name release];
+    [apell release];
+    
+//    [self dismissModalViewControllerAnimated:YES];
+    
+    return YES;
+}
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+    if (property == kABPersonPhoneProperty){
+        NSLog(@"Principal");
+    }
+    NSLog(@"Ye");
+    return NO;   
+}
+-(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+
+
+
+
+
+
+
+
+- (void)didReceiveMemoryWarning{
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
@@ -24,6 +74,10 @@
 }
 
 #pragma mark - View lifecycle
+
+-(void)awakeFromNib{
+    NSLog(@"Cargando");
+}
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
